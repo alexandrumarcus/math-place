@@ -1,0 +1,11 @@
+.login {
+	background-color: $alpha;
+	display: flex;
+	height: 100%;
+	position: relative;
+	width: 100%;
+
+	.login-form {
+		max-width: 20rem;
+	}
+}
