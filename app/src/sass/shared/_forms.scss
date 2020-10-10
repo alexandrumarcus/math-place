@@ -1,0 +1,96 @@
+.form-group {
+  .form-label-group {
+    &:last-of-type {
+      & > input {
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+      }
+
+      margin-bottom: 3.2rem;
+    }
+
+    &:first-of-type {
+      & > input {
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+        border-bottom-width: 0px;
+      }
+    }
+
+    & > label {
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: block;
+      width: 100%;
+      margin: 0;
+      line-height: 1.5;
+      color: $gray;
+      border: 1px solid transparent;
+      border-radius: 0.4rem;
+      font-size: 1.4rem;
+      transition: 0.33s all;
+    }
+
+    & > label,
+    & > input {
+      padding: 1.4rem;
+    }
+
+    & > input {
+      font-size: 1.4rem;
+      border-radius: 0.4rem;
+      width: 100%;
+      border: 1px solid $alpha-200;
+      transition: 0.33s all;
+      box-shadow: none !important;
+      color: $white;
+      height: auto;
+      line-height: 1.5;
+      background-color: $alpha-100;
+      position: relative;
+
+      &:not(:placeholder-shown) {
+        & + label {
+          color: $gray;
+        }
+      }
+
+      &:focus {
+        & + label {
+          color: $alpha-400;
+        }
+      }
+
+      &:not(:placeholder-shown) {
+        padding-top: calc(1.4rem + 1.4rem * (2 / 3));
+        padding-bottom: calc(1.4rem / 3);
+        & ~ label {
+          padding: calc(1.4rem / 3) 1.4rem;
+          font-size: 1.3rem;
+        }
+      }
+
+      &::placeholder {
+        color: transparent;
+        opacity: 0;
+      }
+    }
+
+    .icon-pw {
+      position: absolute;
+      right: 2.5rem;
+      top: 50%;
+      transform: translate(-10%, -50%);
+      font-size: 16px;
+      cursor: pointer;
+      opacity: .6;
+      transition: opacity .33s;
+
+      &:hover,
+      &:focus {
+        opacity: 1;
+      }
+    }
+  }
+}
