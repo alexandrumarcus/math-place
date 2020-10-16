@@ -1,17 +1,11 @@
 const express = require("express");
 const router = express.Router();
-const path = require("path");
+const User = require("../models/User");
 
-// @desc login page
-router.get('/', (rq, rs) => {
-	rs.render('login', {
-		title: "Login",
-		partialsDir: [
-			path.join(__dirname, 'partials'),
-		],
-		header: false,
-		footer: true
-	});
-})
+const loginGET = require("./login/get");
+const loginPOST = require("./login/post");
+
+router.use("/login", loginGET);
+router.use("/login", loginPOST);
 
 module.exports = router;
